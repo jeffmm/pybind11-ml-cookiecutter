@@ -1,0 +1,25 @@
+version: '1'
+services:
+  notebook-server:
+    build:
+      context: .
+    ports:
+       - "127.0.0.1::8888"
+    volumes:
+       - ../:/mnt
+    entrypoint: bash -c "cd /mnt && jupyter notebook --NotebookApp.token='' --ip=0.0.0.0 --allow-root && /bin/bash" 
+    stdin_open: true
+    tty: true
+    env_file:
+      - ../.env 
+
+  bash-executer:
+    build:
+      context: .
+    volumes:
+       - ../:/mnt
+    entrypoint: "/bin/bash" 
+    stdin_open: true
+    tty: true
+    env_file:
+      - ../.env 

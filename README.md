@@ -15,14 +15,6 @@ _A logical, reasonably standardized, but flexible project structure for doing an
 $ pip install cookiecutter
 ```
 
-or
-
-``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
-```
-
-
 ### To start a new project, run:
 ------------
 
